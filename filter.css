@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    text-align: center;
+
+    
+    overflow: hidden;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('american-mountain-skyline.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7; /* Set your desired opacity */
+    z-index: -1; /* Ensure the pseudo-element is behind the content */
+   
+
+}
+
+input {
+    display: none;
+}
+
+span {
+    margin-top: 30px;
+    display: block;
+    font-weight: bold;
+}
+
+.tag {
+    display: inline-block;
+    color: black;
+    margin: 15px 10px 15px 10px;
+    width: 80px;
+    height: 25px;
+    background: #EEEEEE;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.images img {
+    opacity: 1;
+    width: 350px;
+    height: 200px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    transition: all .4s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#cars:checked~.images>img:not([class*='cars']),
+#bikes:checked~.images>img:not([class*='bikes']),
+#offroad:checked~.images>img:not([class*='offroad']) {
+    width: 0px;
+    height: 0px;
+    border:0;
+
+}
+
+
+
+#all:checked~.all,
+#cars:checked~.tag-1,
+#bikes:checked~.tag-2,
+#tricycle:checked~.tag-3 {
+    background: #FF0080;
+}
